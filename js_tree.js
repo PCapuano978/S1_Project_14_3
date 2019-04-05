@@ -37,12 +37,28 @@
       node and false if it doesn't
 */
 
+var nodeCount = 0;
+var elementCount = 0;
+var textCount = 0;
+var wsCount = 0;
 
+window.addEventListener("load", makeTree);
 
+function makeTree() {
 
+      document.createElement(
+
+            <
+            aside id = ”treeBox” >
+            <
+            h1 > Node Tree < /h1> <
+            /aside>
+      )
+
+}
 
 
 
 function isWhiteSpaceNode(tString) {
-   return !(/[^\t\n\r ]/.test(tString));
+      return !(/[^\t\n\r ]/.test(tString));
 }
