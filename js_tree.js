@@ -48,6 +48,7 @@ function makeTree() {
 
       var aside = document.createDocumentFragment("<aside id = ”treeBox”> <h1> Node Tree </h1> </aside>");
 
+<<<<<<< Updated upstream
    aside.appendChild(document.getElementById("main"));
 
    var nodeList = document.getElementsByTagName("ol");
@@ -58,6 +59,13 @@ function makeTree() {
 
    makeBranches(sourceArticle, nodeList);
    document.getElementById("totalNodes", "elemNodes", "textNodes", "wsNodes").innerHTML = nodeCount, elementCount, textCount, wsCount;
+=======
+            <
+            aside id = ”treeBox” >
+            <
+            h1 > Node Tree < /h1> </aside >
+      )
+>>>>>>> Stashed changes
 
 }
 
