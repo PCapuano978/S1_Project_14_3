@@ -37,100 +37,127 @@
       node and false if it doesn't
 */
 
+// The global variables bellow are all declared and set to an intial value of "0".
 var nodeCount = 0;
 var elementCount = 0;
 var textCount = 0;
 var wsCount = 0;
 
+// When the window intially loads, the "makeTree" function is set to boot up.
 window.addEventListener("load", makeTree);
 
+// The previously used makeTree function is now evaluated with the following commands. 
 function makeTree() {
 
+      // The "aside" local variable is set to a document frament containing the string seen below.  
       var aside = document.createDocumentFragment("<aside id = ”treeBox”> <h1> Node Tree </h1> </aside>");
 
-<<<<<<< Updated upstream
-   aside.appendChild(document.getElementById("main"));
+      // The elements with the Id of "main" are set to be appended to the aside node.
+      aside.appendChild(document.getElementById("main"));
 
-   var nodeList = document.getElementsByTagName("ol");
+      // The local "nodeList" variable will be set to the ordered list elements found in the document.
+      var nodeList = document.getElementsByTagName("ol");
 
-   document.appendChild(aside);
+      // The ordered list elements are to be appended to the aside node. 
+      aside.appendChild(document.getElementsByTagName("ol"));
 
-   var sourceArticle = document.querySelectorAll("#main article");
+      // The Local variable of "sourceArticle" is set to the value of the "#main article" span through the querySelectorAll method.
+      var sourceArticle = document.querySelectorAll("#main article");
 
-   makeBranches(sourceArticle, nodeList);
-   document.getElementById("totalNodes", "elemNodes", "textNodes", "wsNodes").innerHTML = nodeCount, elementCount, textCount, wsCount;
-=======
-            <
-            aside id = ”treeBox” >
-            <
-            h1 > Node Tree < /h1> </aside >
-      )
->>>>>>> Stashed changes
+      // The "makeBranches" function is called with the sourceArticle and nodeList variables used as parameters.
+      makeBranches(sourceArticle, nodeList);
+
+      // The elements of the following provided are implemented into the HTML of the docuument in the following also provided afterward.
+      document.getElementById("totalNodes", "elemNodes", "textNodes", "wsNodes").innerHTML = nodeCount, elementCount, textCount, wsCount;
 
 }
 
+// Function "makeBranches" is eastablished with the commands below.
 function makeBranches() {
 
-nodeCount = nodeCount + 1;
+      // nodeCount is increased by one.
+      nodeCount = nodeCount + 1;
 
-var liElem = document.getElementsByTagName("li");
+      // Local variable "liElem" is set to the list item elements within the document.
+      var liElem = document.getElementsByTagName("li");
 
-var spanElem = document.createDocumentFragment("<li> +-- <span> </span> </li>")
+      // "spanElem" is defined locally as the element fragment provided. 
+      var spanElem = document.createDocumentFragment("<li> +-- <span> </span> </li>")
 
-liElem.appendChild(spanElement);
+      // The spanElement variable is appended to the "liElem" local variable. 
+      liElem.appendChild(spanElement);
 
-document.getElementsByTagName("li").appendChild("liElem");
+      // liElem is now appended to the list item elements within the document.
+      document.getElementsByTagName("li").appendChild("liElem");
 
-if (treeNode = Element) {
+      // A conditional statement is formed and continues if treeNode is equal to the element node.
+      if (treeNode = elementNode) {
 
-elementCount = elementCount + 1;
+            // elementCount is increased by one.
+            elementCount = elementCount + 1;
 
-spanElem.setAttribute("class", "elementNode");
+            // spanElem has its class attribute set to the elementNode.
+            spanElem.setAttribute("class", "elementNode");
 
-spanElem.appendChild("<" + Element + ">");
+            // The elementNode variable is then appended as a tag string to the spanElem variable.
+            spanElem.appendChild("<" + elementNode + ">");
 
-   
-} else if (treeNode = Text) {
-   
-   textCount = textCount + 1;
+            //if the condition does not apply, but treeNode is equal to the text node, the following commands are done.
+      } else if (treeNode = textNode) {
 
-   var textString = Text;
+            // textCount is increased by one.
+            textCount = textCount + 1;
 
-   isWhiteSpaceNode(textString)
+            // the local "textString" varaible is set to textNode.
+            var textString = textNode;
 
-   if (isWhiteSpaceNode = true) {
-      
-      wsCount = wsCount + 1;
+            // the isWhiteSpaceNode is called with textString as its parameter. 
+            isWhiteSpaceNode(textString)
 
-      spanElem.setAttribute("node", "whiteSpaceNode");
+            // Additionally, if the isWhiteSpaceNode returns back a value of true, then...
+            if (isWhiteSpaceNode = true) {
 
-      spanElem.appendChild("#text");
+                  // weCount is increased by one..
+                  wsCount = wsCount + 1;
 
-   }
+                  // spanElem has its node attribute set to the result of the isWhiteSpaceNode
+                  spanElem.setAttribute("node", "isWhiteSpaceNode");
 
-   if (isWhiteSpaceNode = false) {
+                  // The "#text" string is appended to spanElem.
+                  spanElem.appendChild("#text");
 
-      spanElem.setAttribute("class", "textNode");
+            }
 
-      spanElen.appendChild(textString);
-      
-   }
+            // But, if isWhiteSpaceNode returns back as false, then...
+            if (isWhiteSpaceNode = false) {
 
-}
+                  // spanElem has its attribute of class set to textNode.
+                  spanElem.setAttribute("class", "textNode");
 
-if (treeNode > 0) {
+                  // textString is appended to spanElen.
+                  spanElen.appendChild(textString);
 
-   var newlist = createDocumentFragment("<ol>|</ol>");
+            }
 
-   newlist.appendChild("nestedList");
+      }
 
-   for (let n = 0; n < treeNode.length; n++) {
-      
-      makeBranches("n", "newList");
+      // if treeNode is greater than zero, then...
+      if (treeNode > 0) {
 
-   }
-   
-}
+            // The local "newList" is set to a document fragement of the opening and closing tags of the ordered list.
+            var newlist = createDocumentFragment("<ol>|</ol>");
+
+            // "nestedList" is appended to newlist.
+            newlist.appendChild("nestedList");
+
+            // And finally, a for loop is done cycling through the treeNode collection and applying the makeBranches function each time with the "n" index and "newList" as their parameters.
+            for (let n = 0; n < treeNode.length; n++) {
+
+                  makeBranches("n", "newList");
+
+            }
+
+      }
 
 }
 
